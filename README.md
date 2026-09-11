@@ -307,12 +307,65 @@ Considering below image as netlist:
 
 <img width="446" height="324" alt="image" src="https://github.com/user-attachments/assets/637e561c-0ed4-40b7-a5d8-a8f365c2b16c" />
 
+**Summary:** We set the die/core area, aspect ratio, and utilization factor; place the I/O cells; create the power distribution network; and perform macro placement.
 
+The floor plan is now ready for the placement and routing step.
 
+**Lab**
 
+Standard cell placement happens during the placement stage.
 
+OPENLANE/CONFIGURATION$ less README.md
 
+The README file has details on what is being done at each stage (synthesis → floorplanning → placement → CTS → routing). Variables act as switches — each switch specifies what is being done and its default value. We can set values for any of these switches/variables/parameters as per our needs.
 
+There are separate .tcl files that show what default value has been set.
 
+**Priority flow:**
+
+floorplan.tcl → config.tcl → sky130A_sky130_fd_sc_hd_config.tcl
+
+**Inside config.tcl:**
+
+VMETAL Layer – 4
+HMETAL Layer – 3
+
+(These layers are 1 more than what you specify.)
+
+**Inside floorplan.tcl:**
+
+VMETAL Layer – 2
+HMETAL Layer – 3
+run_floorplan
+cd logs/floorplan/
+ls -ltr
+less ioplacer.log
+
+**Check:**
+
+Vertical metal layer: 5
+Horizontal metal layer: 4
+Core utilization = 50 (incorrect — the design's config.tcl should override the system defaults)
+
+[The system default of 50 (from floorplan.tcl) was overridden by 65 (from config.tcl), and that 65 was in turn overridden by sky130A_sky130_fd_sc_hd_config.tcl.]
+1 microns – 1000 database unites
+
+<img width="975" height="83" alt="image" src="https://github.com/user-attachments/assets/5788bc2a-6d56-4f40-bdf7-24d744e4faf4" />
+
+<img width="975" height="82" alt="image" src="https://github.com/user-attachments/assets/47e87727-f880-45aa-9a79-0b39eb9ddb2c" />
+
+**Magic Tool**
+
+Magic will open.
+
+Shift+V – Fit the layout on the screen.
+
+Zoom into a particular portion – Left mouse click, then right mouse click, then press Z.
+
+Tkcon window – Type what to show which layer you are currently in.
+
+<img width="547" height="376" alt="image" src="https://github.com/user-attachments/assets/d96fba4e-3e26-46ea-832c-eb0ea387752c" />
+
+Tap cells are used to avoid latch-up conditions in CMOS devices. They connect the n-well to Vdd and the substrate to ground. They are placed at equal diagonal distances from one another.
 
 
