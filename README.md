@@ -584,5 +584,31 @@ Voltage Values.
 <img width="385" height="339" alt="image" src="https://github.com/user-attachments/assets/57ad5a1c-ac6a-4024-9eb2-36e3f71be246" />
 
 
+Let's start writing the SPICE deck.
 
+MOSFET Syntax: name drain gate source substrate p/n mos values
+
+<img width="855" height="349" alt="image" src="https://github.com/user-attachments/assets/126de95a-9892-4509-b845-d39f4770d8fd" />
+
+<img width="577" height="440" alt="image" src="https://github.com/user-attachments/assets/94b95b1b-c7d7-4b3a-873f-f382ca0b9964" />
+
+Simulation 1
+
+Steps:
+
+Open the ngspice simulator.
+Navigate to the location where the .cir file is stored:
+   cd <location>
+Source the circuit file:
+   source <circuit_file>
+Run the simulation:
+   run
+Set the plot:
+   setplot
+   dc1
+   display
+Plot the output vs. input:
+   plot out vs in
+
+This gives us the VTC (Voltage Transfer Characteristics) curve.
 
