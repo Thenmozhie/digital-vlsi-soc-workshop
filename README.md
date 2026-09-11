@@ -227,6 +227,88 @@ A ratio of 1 means it is in a square shape; if not 1, it means it's a rectangula
 
 **IF THE CHIP IS BIGGER:**
 
+<img width="636" height="384" alt="image" src="https://github.com/user-attachments/assets/cd6ec3fe-8f0b-4011-a6b2-0e46caed3827" />
+
+UF = 0.5, AR = 2/4 = 0.5
+
+**2. Define the location of pre-placed cells.**
+
+Pre-placed cells – Implemented as black boxes and used multiple times, though the functionality is implemented only once.
+
+Similar IPs – Memory, Clock-Gating, Comparator, MUX — are implemented once and can be instantiated multiple times in the netlist. The functionality is implemented only once.
+
+The arrangement of these IPs in the chip is called floorplanning. Since they are placed in the chip before automated placement and routing, they are called pre-placed cells.
+
+<img width="501" height="551" alt="image" src="https://github.com/user-attachments/assets/e391fff6-53c7-45cb-928f-6be4c23c5329" />
+
+**3. Surround pre-placed cells with Decoupling Capacitors**
+
+Switching operations demand switching current.
+
+0 → 1: Requires power.
+
+1 → 0: Discharges power.
+
+Decoupling Capacitor – Decouples the circuit from the main power supply. It is added in parallel to Vdd and placed close to the circuitry. Whenever the circuit switches, it draws current from the decoupling capacitor (Cd) instead of the main supply.
+
+<img width="605" height="317" alt="image" src="https://github.com/user-attachments/assets/1deb0182-9af9-4054-a8d9-e2c22c7e9ed3" />
+
+Decoupling capacitors keep the circuit charged. Whenever there is switching activity, the decoupling capacitor loses some amount of charge to the circuitry; whenever there is no switching activity, the decoupling capacitor spends its time replenishing its own charge. This takes care of local communication.
+
+<img width="415" height="266" alt="image" src="https://github.com/user-attachments/assets/bd74371c-a2fa-4c5b-8ef5-1acc0c54fa07" />
+
+**What about global communication?**
+
+**4.	Power planning**
+
+Problem: The supply is provided only from one point
+
+<img width="462" height="334" alt="image" src="https://github.com/user-attachments/assets/16d0e21f-19d4-4ecd-89bc-a4537c2bc15f" />
+
+ 1->0  ground bounce
+
+ <img width="599" height="379" alt="image" src="https://github.com/user-attachments/assets/20b032d0-4208-4ec8-8c3e-537b8b3bc685" />
+
+0 ->1 voltage drops
+
+<img width="595" height="358" alt="image" src="https://github.com/user-attachments/assets/3546e3b6-acc3-49ca-9219-2dc5c3ef485e" />
+
+**Solution:** Multiple power supplies — multiple Vdd's and Vss's. This is called a mesh.
+
+<img width="511" height="411" alt="image" src="https://github.com/user-attachments/assets/8bad69ba-b3ee-471a-b1ad-bc6990e0b7cd" />
+
+<img width="518" height="391" alt="image" src="https://github.com/user-attachments/assets/27695164-e299-48f4-90a9-ecb2a306b3dd" />
+
+Any logic in that area will take current from the nearest power supply or dump its current into the nearest ground.
+
+**5. Pin placement**
+
+Considering below image as netlist:
+
+<img width="575" height="396" alt="image" src="https://github.com/user-attachments/assets/029b8736-761b-4740-8bb9-d54468f415c0" />
+
+<img width="508" height="355" alt="image" src="https://github.com/user-attachments/assets/39652193-5a5c-4609-8f02-a03adb1bff98" />
+
+**Observations:**
+
+-I/O ports are placed in the area between the core and the die.
+
+-I/O ports can be placed anywhere, in any order, based on the designer's choice.
+
+-The ordering of Din/Dout is not fixed — it depends on where the cells are placed. For example, if block A is driven by Din1 and Din2, we try to place it close to those ports. Similarly, if block B is directly connected to the clock output, placing it too close might require additional decoupling capacitors — so instead, we keep it where it is and use buffers to route the signal out to the clock output.
+
+-No cell/flip-flop can be placed in the occupied area — ports must remain outside of this area.
+
+-Functional understanding is important for pin placement.
+
+-Clock ports are larger in size compared to I/O ports. This is because the clock drives the entire chip continuously and needs the lowest-resistance path possible. A larger size means lower resistance.
+
+**6. Logical Cell Placement Blockage** – The automated place-and-route tool should not place any cell in this area, as it is reserved for pin locations. The area (orange-shaded) is blocked off for the automated place-and-route tool. This is done through logical cell placement blockage.
+
+<img width="446" height="324" alt="image" src="https://github.com/user-attachments/assets/637e561c-0ed4-40b7-a5d8-a8f365c2b16c" />
+
+
+
 
 
 
