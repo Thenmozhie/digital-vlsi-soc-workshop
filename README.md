@@ -368,4 +368,62 @@ Tkcon window – Type what to show which layer you are currently in.
 
 Tap cells are used to avoid latch-up conditions in CMOS devices. They connect the n-well to Vdd and the substrate to ground. They are placed at equal diagonal distances from one another.
 
+### Placement and Routing
+
+**1. Bind the netlist with physical cells.**
+
+In the netlist, the shape of the gate represents its functionality, but in reality, it looks like a box with defined dimensions (width and height).
+
+<img width="582" height="335" alt="image" src="https://github.com/user-attachments/assets/3cd0ec57-211f-4527-ba1f-907018c97fb5" />
+
+<img width="239" height="329" alt="image" src="https://github.com/user-attachments/assets/028992a6-7bec-4cad-966b-456baba6ca70" />
+
+<img width="442" height="254" alt="image" src="https://github.com/user-attachments/assets/03acbb90-e6a4-47e1-8b25-e9e491e27d45" />
+
+**Library**– Contains the width and height, timing and delay information, required conditions (when conditions), and the shape and size of each cell.
+
+We can choose whichever size we want based on the timing condition and the space available on the floorplan.
+
+**2. Placement** 
+
+At this stage, we have the netlist, the floorplan, and the physical view of the logic gates. Now we need to place the netlist within the floorplan.
+
+<img width="947" height="375" alt="image" src="https://github.com/user-attachments/assets/98d8f7fe-cfdf-4ef1-87d0-33cc6aa39adc" />
+
+<img width="779" height="352" alt="image" src="https://github.com/user-attachments/assets/481f98c3-2e41-403b-813d-74c7d700f357" />
+
+**3. Optimized Placement** – There are flip-flops (FFs) placed far away from input and output components. The solution to this distance issue is optimized placement.
+
+At this stage, we estimate wire length and capacitance, and based on that, insert repeaters. Repeaters are buffers used to maintain signal integrity — but more repeaters mean more area used.
+
+Based on the slew value/data transition analysis, we decide whether or not a buffer is needed in the path.
+
+To check if the placements are correct: perform data path and setup timing analysis with an ideal clock.
+
+**Need for Characterization** – Library Characterization and Modeling.
+
+**Step 1 – Logic Synthesis**
+
+Output: An arrangement of gates that represents the original functionality described using RTL.
+
+**Step 2 – Floorplanning**
+
+Import the netlist to decide the width and height of the core and die, depending on the number of gates and the shape and size of the gates in the netlist.
+
+**Step 3 – Placement**
+
+Place the logic cells in a manner that meets initial timing requirements.
+
+**Step 4 – Clock Tree Synthesis (CTS)**
+
+To achieve zero skew.
+
+**Step 5 – Routing**
+
+To route from one point to another, we need to consider certain properties of the cell that must be taken into account.
+
+**Step 6 – STA**
+
+This is the final stage, also called sign-off timing analysis. It determines the setup time, hold time, and the maximum frequency of the circuit.
+
 
