@@ -602,23 +602,57 @@ Navigate to the location where the .cir file is stored:
   
    cd <location>
 
-Source the circuit file:
+**Source the circuit file:**
   
    source <circuit_file>
 
-Run the simulation:
+**Run the simulation:**
    
    run
 
-Set the plot:
+**Set the plot:**
    
    setplot
    dc1
    display
 
-Plot the output vs. input:
+**Plot the output vs. input:**
   
    plot out vs in
 
 This gives us the VTC (Voltage Transfer Characteristics) curve.
+
+<img width="567" height="458" alt="image" src="https://github.com/user-attachments/assets/231e4c35-50ec-47ec-9f6e-21013af57836" />
+
+Simulation 2 – simulate following the same steps with pmos width 2.5 time greater
+ 
+<img width="473" height="315" alt="image" src="https://github.com/user-attachments/assets/fa9e209b-3512-4b03-b8a1-85d5d7752d21" />
+
+<img width="858" height="412" alt="image" src="https://github.com/user-attachments/assets/e759027b-8b5e-492e-b47c-893c98edd3d4" />
+
+### Static behavior evaluation: CMOS inverter robustness
+
+**1. Switching Threshold, Vm**
+
+Vm is the point at which Vin = Vout, meaning both MOSFETs are in the saturation region — i.e., both are ON, which leads to leakage current.
+
+Transient analysis,
+
+<img width="698" height="299" alt="image" src="https://github.com/user-attachments/assets/072c3276-4559-4de0-940a-dca464388f15" />
+
+**Finding Rise Delay, Fall Delay, and Switching Threshold (Vm)**
+
+Lab – Extracting a SPICE File from a .mag File for Characterization
+
+Given a .mag file, here's how to extract the SPICE file from it and perform characterization.
+
+git clone <GitHub link>
+ls -ltr
+cd vsdstdcelldesign
+ls -ltr
+
+We will first open the .mag file to view the layers of the inverter — we don't need to build the inverter from scratch.
+
+We need to perform SPICE extraction and post-layout SPICE simulation.
+
 
