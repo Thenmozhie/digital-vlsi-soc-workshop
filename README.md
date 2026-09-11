@@ -597,17 +597,27 @@ Simulation 1
 Steps:
 
 Open the ngspice simulator.
+
 Navigate to the location where the .cir file is stored:
+  
    cd <location>
+
 Source the circuit file:
+  
    source <circuit_file>
+
 Run the simulation:
+   
    run
+
 Set the plot:
+   
    setplot
    dc1
    display
+
 Plot the output vs. input:
+  
    plot out vs in
 
 This gives us the VTC (Voltage Transfer Characteristics) curve.
