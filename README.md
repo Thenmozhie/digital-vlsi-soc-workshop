@@ -426,4 +426,47 @@ To route from one point to another, we need to consider certain properties of th
 
 This is the final stage, also called sign-off timing analysis. It determines the setup time, hold time, and the maximum frequency of the circuit.
 
+One common element across all stages is gates/cells (AND, OR, LATCH, BUFFER, DFF, ICG, etc.). To know what a gate is — its timing characteristics, etc. — for the EDA tools, library characterization is important.
+
+**Lab – Checking if Congestion is Reduced**
+
+**Placement**– Standard cell positions are fixed.
+
+Global and detailed placement each require different tools.
+
+**Global Placement** – Focuses on reducing wire length using HPWL (Half-Perimeter Wire Length). No legalization happens at this stage; legalization actually occurs during detailed placement.
+
+**Legalization** – Ensures there are no overlaps between cells, from a timing point of view.
+
+**Cell Design Flow**
+
+<img width="768" height="395" alt="image" src="https://github.com/user-attachments/assets/04caa87e-0ec1-4cae-ad47-bcf63faa3a3f" />
+
+Library – Drive strength, voltage, size, and functionality vary for each element/standard cell.
+
+<img width="693" height="415" alt="image" src="https://github.com/user-attachments/assets/26ec1a92-b719-48a1-8e20-414ceeab2275" />
+
+**Cell Design Flow (For Inverter / NOT Gate)**
+
+**Inputs:**
+
+**DRC & LVS Rules** – Design rules such as poly width (lambda), poly-to-active spacing, etc., are defined in the library files.
+
+**SPICE Models** – Contain formulae for equations such as threshold voltage; the parameters used in these formulae take values from the library.
+
+**Library & User-Defined Specs:**
+
+-Cell height (separation between power and ground) and cell width (based on timing information) to achieve good (high) drive strength.
+Supply voltage (considering noise margin).
+
+-Metal layers — certain library elements should be placed on specific metal layers; for example, power layers and contacts should be built on the metal layers specified in the spec.
+
+-Pin locations — the spec may require certain inputs/outputs to be placed near power/ground.
+
+-Drawn gate length (gate length).
+
+**Design Steps:**
+
+Circuit Design – Determines the switching threshold voltage, deriving (Wp/Lp)/(Wn/Ln). The output from circuit design is called the Circuit Description Language (CDL) file.
+
 
