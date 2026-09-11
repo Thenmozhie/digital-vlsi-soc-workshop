@@ -844,7 +844,62 @@ Hydrogen peroxide 1 part
 
 <img width="1089" height="228" alt="image" src="https://github.com/user-attachments/assets/1d3f116d-5ee7-4c29-be32-d49e8bf714a2" />
 
+**8.	Higher level metal formation**
 
+- depositing thick layer of SiO2 which is Doped with ph/Boron
 
+<img width="584" height="312" alt="image" src="https://github.com/user-attachments/assets/e68511ee-a292-4551-9bca-02ecec278df3" />
+
+- chemical mechanical polishing (CMP) technique
+  
+- drilling contact holes – photolithography steps - Again photoresist then mask12 one of the area, then UV rays exposure
+
+  <img width="974" height="236" alt="image" src="https://github.com/user-attachments/assets/f19c288f-9bf8-4238-8726-6b36c6735921" />
+
+ **--1st layer of interconnect--**
+ 
+- Add Ti layer – why – TiN -good barrier layer
+  
+- deposit Blanket tungsten(W) layer 
+
+<img width="550" height="246" alt="image" src="https://github.com/user-attachments/assets/369de153-d647-4dfc-b1a0-7dfbe0b02065" />
+
+- Chemical mechanical poslishing CMP for planarizing wafer surface
+
+<img width="545" height="241" alt="image" src="https://github.com/user-attachments/assets/02cd87a8-d568-49aa-817e-5375f407e78a" />
+
+- Aluminium metal layer deposition
+  
+- Again photoresist then mask13 one of the area, then UV rays exposure , remove the resist
+  
+<img width="975" height="236" alt="image" src="https://github.com/user-attachments/assets/d11fe375-c1c6-46b4-9cbc-040a727948f6" />
+
+-mask 14 to drill the contact holes
+
+<img width="1032" height="263" alt="image" src="https://github.com/user-attachments/assets/f9c21e95-de2e-4a91-a572-61f1ba8c615a" />
+
+**--2nd layer of interconnect--**
+
+- TiN layer – act as the barrio b/w metal layers
+  
+- tungstun W as contacts
+  
+<img width="688" height="338" alt="image" src="https://github.com/user-attachments/assets/cbcab753-16f1-4f41-a31a-94c1c57b8402" />
+
+**--3rd layer of interconnect—**
+
+- Al layer (thicker thean bottom later increases from bottom to top)
+  
+- Again photoresist then mask15 one of the area, then UV rays exposure , remove the resist
+  
+- Si3N4/SiO2 dielectric layer
+
+<img width="974" height="257" alt="image" src="https://github.com/user-attachments/assets/153e8c54-d38d-4176-890e-dd038e6223ef" />
+
+- Mask 16 – to drill the contact holes
+
+  <img width="725" height="437" alt="image" src="https://github.com/user-attachments/assets/398a7865-4179-4796-879f-d0ddeb74c47e" />
+
+  <img width="727" height="584" alt="image" src="https://github.com/user-attachments/assets/552c1799-b30d-4ff3-8e12-b859e0503736" />
 
 
