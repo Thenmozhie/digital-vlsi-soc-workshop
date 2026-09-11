@@ -924,3 +924,112 @@ LEF File – Library Exchange Format. Contains all metal layers but no logic; it
 Reference: https://github.com/nickson-jose/vsdstdcelldesign
 
 This GitHub link includes step-by-step instructions for creating a CMOS layout.
+
+<img width="606" height="633" alt="image" src="https://github.com/user-attachments/assets/4b85ec28-b10c-4b69-b424-e24ec3f2151e" />
+
+LLX – Lower-left X value.
+
+URX – Upper-right X value.
+
+Understanding and Modifying the .spice File
+
+<img width="613" height="317" alt="image" src="https://github.com/user-attachments/assets/2211ba56-30ab-4070-aba1-72493d92bd05" />
+
+Updated file: 
+
+<img width="975" height="425" alt="image" src="https://github.com/user-attachments/assets/b870e4d1-65cd-4c6a-93ce-43fc7c79862a" />
+
+- Finding transient response:
+
+  <img width="898" height="538" alt="image" src="https://github.com/user-attachments/assets/b0eb9fcf-38b1-4bc4-b534-6e711810af36" />
+
+Characterizing the Cell
+
+**Finding Delays** – If a particular point is selected, its value is printed in the terminal.
+
+Use this layout to create the LEF file.
+
+**LAB EXERCISE: Magic DRS**
+
+https://opencircuitdesign.com/magic/
+
+https://github.com/google/skywater-pdk
+
+https://skywater-pdk.readthedocs.io/en/main/
+
+## DAY 4 Pre-layout timing analysis and importance of good clock tree
+
+**How to Extract the .lef File**
+
+Convert the grid into track information.
+
+<img width="661" height="190" alt="image" src="https://github.com/user-attachments/assets/b1603a9b-f351-44a5-9431-a8d7b7851514" />
+
+Tkcon:
+% help grid
+
+**Steps to Convert Magic Layout to Standard Cell LEF**
+
+Requirements to ensure the standard cell layout meets the PnR tool's specifications:
+
+Input and output ports must be located at the intersection of the horizontal and vertical width/routing grid tracks.
+The width of the standard cell should be an odd multiple of the X pitch, and similarly for the height.
+
+Set the layer so that ports are declared as pins of the macro in the .lef file:
+
+% lef write
+
+This will update the .lef file with the same name as the Magic file (i.e., sky130a_vsdinv.mag).
+
+<img width="835" height="195" alt="image" src="https://github.com/user-attachments/assets/d22ba666-589a-458e-b233-7843568ffc0f" />
+
+For STA analysis these 4 .lib file are needed/helpful: 
+
+<img width="975" height="145" alt="image" src="https://github.com/user-attachments/assets/0119b304-256e-4b6d-99e3-e1abb55b2753" />
+
+### Power-Aware CTS
+
+**Clock Gating Technique**
+
+Delay tables exist for buffers of different sizes with their corresponding loads. Similarly, there are delay tables for gates.
+
+<img width="821" height="478" alt="image" src="https://github.com/user-attachments/assets/00c46b22-7722-4656-a49e-a99f230e62e2" />
+
+<img width="811" height="418" alt="image" src="https://github.com/user-attachments/assets/9c32785f-5d9c-479b-aa08-c29db8381020" />
+
+<img width="618" height="322" alt="image" src="https://github.com/user-attachments/assets/8b330760-0f70-4bf3-aff9-2eeeb7506c45" />
+
+**Lab**
+
+<img width="820" height="536" alt="image" src="https://github.com/user-attachments/assets/db271e17-46bc-4649-bdb7-52ff7aa14585" />
+
+**Modifications:**
+
+<img width="444" height="413" alt="image" src="https://github.com/user-attachments/assets/1ee45571-b907-4d48-b515-f11d5a8bee57" />
+
+These settings should create a netlist with reduced slack.
+
+**Result:** Yes — slack was reduced from −15 to −3.
+
+**Timing Analysis (With Ideal Clock)**
+
+**Setup Timing Analysis: Single Clock**
+
+Combinational delay should be less than the clock period.
+
+Setup Analysis
+
+Combinational delay should be less than (clock period − setup time).
+
+Setup Time – The time required by the capture flip-flop to settle the information present at its input.
+
+<img width="760" height="458" alt="image" src="https://github.com/user-attachments/assets/8d1da923-e80a-4463-a533-c470dcbb9c53" />
+
+Temperature variation of the clock (jitter) – Setup uncertainty.
+
+<img width="616" height="197" alt="image" src="https://github.com/user-attachments/assets/1b40b697-6e1e-4eaf-9c5b-298bbc597797" />
+
+<img width="975" height="421" alt="image" src="https://github.com/user-attachments/assets/8431ef8d-95f6-4f2c-9be5-b84fdd15dada" />
+
+
+
