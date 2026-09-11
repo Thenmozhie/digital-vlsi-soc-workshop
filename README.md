@@ -1,8 +1,12 @@
 # digital-vlsi-soc-workshop
 
-Table of Contents
+**Table of Contents**
 
  [DAY 1](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
+ [DAY 2](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+ [DAY 3](#day-3--design-library-cell-using-magic-layout-and-ngspice-characterization)
+ [DAY 4](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+ 
  
 ## DAY 1 Inception of open-source EDA, OpenLANE and Sky130 PDK
 As an example, an Arduino board has a processor chip on it.
