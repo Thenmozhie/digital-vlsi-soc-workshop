@@ -647,12 +647,162 @@ Lab – Extracting a SPICE File from a .mag File for Characterization
 Given a .mag file, here's how to extract the SPICE file from it and perform characterization.
 
 git clone <GitHub link>
+
 ls -ltr
+
 cd vsdstdcelldesign
+
 ls -ltr
 
 We will first open the .mag file to view the layers of the inverter — we don't need to build the inverter from scratch.
 
 We need to perform SPICE extraction and post-layout SPICE simulation.
 
+<img width="975" height="380" alt="image" src="https://github.com/user-attachments/assets/902be4f1-559f-4f54-afc5-29d66fd21b00" />
+
+<img width="975" height="664" alt="image" src="https://github.com/user-attachments/assets/fc1d12e0-7beb-4257-89ba-7daedc946fa8" />
+
+<img width="975" height="571" alt="image" src="https://github.com/user-attachments/assets/9b25420f-5fd7-4896-a663-db9c7d940e8f" />
+
+<img width="695" height="819" alt="image" src="https://github.com/user-attachments/assets/d517bdbe-e22b-4db0-ac5d-5bcd8e1b6515" />
+
+<img width="975" height="498" alt="image" src="https://github.com/user-attachments/assets/6bd5b1d2-9ba7-4e06-8836-8c92b2a1809b" />
+
+### 16-mask process(cross sectional view)
+
+**1. Selecting the Substrate**
+
+The substrate is the base on which the complete design is fabricated. The most common substrate is a p-type silicon substrate.
+
+**2. Creating the Active Region for Transistors**
+
+<img width="543" height="283" alt="image" src="https://github.com/user-attachments/assets/b982af59-7a86-4f67-ab38-f94188f68807" />
+
+Photolithography.
+
+Remove the mask — resist is chemically removed.
+
+Place in an oxidation furnace — helps grow oxide in other areas (2nd level of oxidation).
+
+<img width="531" height="248" alt="image" src="https://github.com/user-attachments/assets/30ec4c58-4b85-4745-813c-1f2e8afae551" />
+
+Si₃N₄ is stripped using hot phosphoric acid, providing electrical isolation between the two transistors.
+
+<img width="540" height="189" alt="image" src="https://github.com/user-attachments/assets/4bd1de34-9466-4173-ba24-7413c7c4e966" />
+
+
+**3. N-well and P-well Formation**
+
+The n-well is used for PMOS fabrication, and the p-well is used for NMOS fabrication. Both cannot be done at the same time — one area must be protected while the other is being fabricated.
+
+<img width="817" height="206" alt="image" src="https://github.com/user-attachments/assets/7f0f7a5b-2b4b-4ead-927d-6a6fff531c96" />
+
+-Expose this layer to UV light (reacts with Red layer) then wash to remove mask2
+
+-Boron (p-type material) – Ion implantation for p-well creation
+
+<img width="498" height="222" alt="image" src="https://github.com/user-attachments/assets/e98ac91e-5336-42db-bc71-6197b3914a53" />
+
+<img width="499" height="226" alt="image" src="https://github.com/user-attachments/assets/35716795-6bcc-44c9-98d1-53673d67b0e7" />
+
+-Expose this layer to UV light (reacts with Red layer) then wash to remove mask3
+
+-Ion implantation – ionization process again for n-well creation
+
+-Phosphorous (n-type material)-heavier than Boron
+
+<img width="447" height="250" alt="image" src="https://github.com/user-attachments/assets/86e71d33-b52f-4032-bcce-b9d8bdf41d55" />
+
+-Put it in the drive in furnace – 110 degree C for 4 to 6 hours
+
+Now forms the clear well of p/n-mos
+
+This is Twin well process
+
+<img width="453" height="266" alt="image" src="https://github.com/user-attachments/assets/19c1752b-062e-45da-bf6e-76c9db9f7842" />
+
+**4.	Formation of ‘gate’**
+
+Gate – control of threshold voltage. This defines the turn on voltage of the transistors. Fab of gate is important.
+
+Doping voltage and oxide capacitance are important to be maintained to get the required threshold voltage.
+
+-Again photoresist then mask4 one of the area, then UV rays exposure, then ionization
+
+-boron
+
+<img width="415" height="214" alt="image" src="https://github.com/user-attachments/assets/5af6d847-4eac-4014-9426-ed849187483f" />
+
+-Again photoresist then mask5 one of the area, then UV rays exposure, then ionization
+
+-Phospherous/Arsenic
+
+<img width="478" height="275" alt="image" src="https://github.com/user-attachments/assets/7167c2ac-c2df-4932-bb09-4ff68fe0e8e6" />
+
+<img width="600" height="237" alt="image" src="https://github.com/user-attachments/assets/fc4d1424-6118-40ed-987f-5f514ec7db31" />
+
+Deposit polysilicon layer
+
+Dop with more impurities
+
+<img width="486" height="237" alt="image" src="https://github.com/user-attachments/assets/18bcde34-bc7c-4964-9a1b-c3bf7f4cd51e" />
+
+Then photoresist then mask6 
+
+<img width="744" height="204" alt="image" src="https://github.com/user-attachments/assets/707a0df2-d733-4467-9aa0-10b890120d36" />
+
+then UV rays exposure, then etching
+
+<img width="848" height="152" alt="image" src="https://github.com/user-attachments/assets/393f325e-6e85-444f-84ed-3f88a808b020" />
+
+**5.	Lightly doped drain(LDD) formation**
+
+Formation order: P+, P−, N / N+, N−, P
+
+Reason for the order of formation: Why include P−/N− in between?
+
+Hot Electron Effect – Electric field: E = V/d. High-energy carriers can break Si–Si bonds.
+
+There is a 3.2 eV barrier between the Si conduction band and the SiO₂ conduction band — a general energy gap maintained between the two conduction bands. If a carrier crosses this barrier, it might enter the oxide layer above the substrate and create reliability issues.
+
+Short Channel Effect – As device size reduces, channels become shorter (i.e., a reduction in gate length). This can cause the drain field/voltage to penetrate into the channel area, making it difficult for the gate to control the source and drain current.
+
+Process for the LDD Structure (Considering These Effects):
+
+- Apply photoresist, then mask one of the areas (Mask 5), followed by UV exposure and ionization.
+
+- Phosphorus/Arsenic — used as n-type impurities.
+
+<img width="549" height="325" alt="image" src="https://github.com/user-attachments/assets/ab90f916-6bf2-4a1e-95de-948f5f9649b2" />
+
+- Again photoresist then mask8 one of the area, then UV rays exposure, then ionization
+  
+- boron
+
+<img width="546" height="301" alt="image" src="https://github.com/user-attachments/assets/0a46556e-d651-40a0-9c8a-743ab5405edd" />
+
+Lightly Doped (LDD)
+
+How to protect this structure: Create side-wall spacers.
+
+Plasma anisotropic etching.
+
+<img width="608" height="252" alt="image" src="https://github.com/user-attachments/assets/8618ba12-20e4-4637-a9a3-de892ea5747b" />
+
+<img width="608" height="248" alt="image" src="https://github.com/user-attachments/assets/399be45d-2525-4224-a886-c7af17aa0dab" />
+
+**6.	Source and drain formation**
+
+- Add Thin Layer of screen oxide – to avoid the effect of channeling (trying to randomize the direction of Ion)
+  
+  <img width="551" height="235" alt="image" src="https://github.com/user-attachments/assets/c13a4998-4aff-4408-b1c2-733907de1ff1" />
+
+- Again photoresist then mask9 one of the area, then UV rays exposure, then ionization
+  
+- Ar exposure
+
+<img width="868" height="246" alt="image" src="https://github.com/user-attachments/assets/b32f67fc-a2a6-4ad7-8873-d23291072e9d" />
+
+- Again photoresist then mask10 one of the area, then UV rays exposure, then ionization
+- 
 
