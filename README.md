@@ -187,3 +187,50 @@ package require openlane 0.9
 prep -design picorv32a
 run_synthesis
 ```
+<img width="975" height="742" alt="image" src="https://github.com/user-attachments/assets/a756d4fa-b186-4847-a285-382484027559" />
+
+Useful link-
+https://github.com/efabless/openlane
+
+**Objective of the Workshop:** Calculate the flop ratio, which is the number of D-flip-flops (D-FF) divided by the total number of cells.
+
+## DAY 2 Good floorplan vs bad floorplan and introduction to library cells
+
+### SKY130_D2_SK1 - Chip Floor planning considerations: 
+
+**1.Define the width and height of the core and die.**
+
+We are dependent on the dimensions of the netlist (flops/logic gates) — only standard cells are considered at this stage, not wires.
+
+
+<img width="517" height="302" alt="image" src="https://github.com/user-attachments/assets/ce3a02dd-d4d4-4014-b5f4-7383cb996cfa" />
+
+4 SQ UNIT
+
+<img width="298" height="235" alt="image" src="https://github.com/user-attachments/assets/5dd162b1-e6da-43f9-9039-0872eab09659" />
+
+<img width="533" height="175" alt="image" src="https://github.com/user-attachments/assets/4f564095-744c-4bd3-a042-382de7acc058" />
+
+<img width="536" height="240" alt="image" src="https://github.com/user-attachments/assets/3fa438b1-e63b-44a4-8d3e-5497e224abd4" />
+
+**Utilization Factor = Area occupied by the netlist / Total area of the core**
+
+= (4 × 1 sq. unit) / (2 unit × 2 unit)
+= 4 sq. units / 4 sq. units
+= 1
+
+This means 100% utilization. Usually, we aim for 50–60% utilization.
+
+Aspect Ratio = Height / Width = 2 unit / 2 unit = 1
+
+A ratio of 1 means it is in a square shape; if not 1, it means it's a rectangular shape.
+
+**IF THE CHIP IS BIGGER:**
+
+
+
+
+
+
+
+
