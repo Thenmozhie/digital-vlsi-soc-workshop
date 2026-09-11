@@ -24,7 +24,7 @@ EXAMPLE- RISC V CHIP
 
 <img width="747" height="586" alt="image" src="https://github.com/user-attachments/assets/f808e1e3-0eab-445f-b894-9715f3344c8b" />
 
-Foundry IPs
+**Foundry IPs**
 
 A typical core/chip consists of components such as SoC, PLL, SPI, SRAM, ADC, and DAC — these are called Foundry IPs. Most chips depend on this foundry.
 
@@ -32,13 +32,23 @@ Foundry – The place where chips are manufactured. We communicate with the foun
 
 Macros – Digital blocks.
 
-Difference:
+**Difference:**
 
 IP – Some intelligence/technique used to build certain logic.
 Macros – Pure digital logic.
 
 <img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/6645c685-9b8f-4697-9fa0-0bcc6020a15b" />
 
+### Introduction to RISC V ISA
+**Software to Hardware Communication**
+
+Software communicates with hardware through an instruction set.
+
+Example: A C program is meant to run on the layout/hardware/chip. The C program is compiled into assembly language (RISC-V), then converted into machine/binary language that the hardware can understand.
+
+The interface between the RISC-V architecture and the layout is HDL. This RISC-V specification needs to be implemented in some RTL (here, the PicoRV32 CPU core), and going from RTL to layout follows the standard RTL-to-GDS flow.
+
+<img width="975" height="515" alt="image" src="https://github.com/user-attachments/assets/731e652c-1a63-4e63-8f19-239bda45f283" />
 
 
 
