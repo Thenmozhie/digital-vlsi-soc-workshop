@@ -2,13 +2,13 @@
 
 **Table of Contents**
 
- [DAY 1](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
+ [DAY 1- Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
  
- [DAY 2](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+ [DAY 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
  
- [DAY 3](#day-3--design-library-cell-using-magic-layout-and-ngspice-characterization)
+ [DAY 3 - Design library cell using Magic Layout and ngspice characterization](#day-3--design-library-cell-using-magic-layout-and-ngspice-characterization)
  
- [DAY 4](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+ [DAY 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
  
  
 ## DAY 1 Inception of open-source EDA, OpenLANE and Sky130 PDK
