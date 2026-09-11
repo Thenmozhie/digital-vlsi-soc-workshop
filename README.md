@@ -502,3 +502,18 @@ Extracted SPICE netlist (.cir) — resistance and capacitance of every element.
 
 These inputs (steps 1–8) are fed in the form of configuration files to the characterization software called GUNA.
 
+<img width="869" height="798" alt="image" src="https://github.com/user-attachments/assets/0b8badc4-2b74-4706-9b60-7dd2227a9f04" />v
+
+
+<img width="869" height="798" alt="image" src="https://github.com/user-attachments/assets/3a522789-5cc5-491d-a355-7cb804f3d6ce" />
+
+
+The output from GUNA brings the classification of characterization types:
+
+1. Timing characterization
+2. Power characterization
+3. Noise characterization
+
+
+
+
