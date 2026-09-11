@@ -65,5 +65,93 @@ This instruction set/specification is implemented in RTL. The RTL is then synthe
 
 <img width="975" height="478" alt="image" src="https://github.com/user-attachments/assets/7ba0a022-6ac4-44dc-986d-7962c8e921cd" />
 
+**SoC Design using OpenLane**
 
+OpenLane was meant to automate entire RTL to GSD to flow
 
+SoC Design using OpenLane
+OpenLane was meant to automate entire RTL to GSD to flow
+
+<img width="778" height="267" alt="image" src="https://github.com/user-attachments/assets/9e493a59-378a-473a-8e54-5d977223786e" />
+
+**Tools**
+
+RTL Design – librecores.org, opencores.org, github.com
+
+EDA Tools – Flow, OpenROAD, OpenLANE
+
+PDK Data – Initially, the design of an IC was tightly integrated with the manufacturing process available within each company. Lynn Conway and Carver Mead envisioned the need to separate design from technology, introducing a structured design methodology based on lambda-based rules.
+
+Since then, we have seen the emergence of pure-play fabs and fabless design companies.
+
+PDK – The interface between designers and fabs is a set of data files and documents referred to as Process Design Kits (PDK).
+
+Includes – Libraries, etc.
+
+Google released an open-source PDK under the Apache 2.0 license — a FOSS 130nm production PDK.
+
+<img width="975" height="1047" alt="image" src="https://github.com/user-attachments/assets/de670e5d-89d6-4c86-8785-c8ea6c27a881" />
+
+**Simplified RTL to GDSII Flow**
+
+<img width="864" height="314" alt="image" src="https://github.com/user-attachments/assets/30fbfb69-55a9-4239-b094-c59ccc57273a" />
+
+**Physical Design Flow**
+
+**Synthesis** – RTL is translated into a circuit using the standard cell library.
+
+**Standard Cells** – Have a regular layout.
+
+**Floorplanning + Powerplanning (FP+PP)** – Planning the silicon area, dimensions, and pin locations.
+
+**Power Planning** – Designing the power distribution network.
+
+**Place** – Placing the cells on the floorplan. This involves two steps: global and detailed placement.
+
+**Clock Distribution Network** – Delivers the clock to all sequential elements.
+
+**Routing** – Implements the interconnect using the available metal layers.
+
+6 routing layers; the lowest is the local interconnect layer, and the other 5 are aluminum layers.
+Global routing – Generates routing guides.
+Detailed routing – Uses the routing guides to implement the actual wiring.
+
+**Sign-off:**
+
+Physical Verification – Design Rule Checking (DRC) and Layout vs. Schematic (LVS).
+Timing Verification – Static Timing Analysis (STA).
+
+**Open Source ASIC Flow – Openlane pdk**
+**OPENSOURCE SoCs – StriVe family (Open PDK, Open EDA, Open RTL)**
+
+<img width="795" height="555" alt="image" src="https://github.com/user-attachments/assets/1d62e618-8c25-4164-af50-09aeec537361" />
+
+**Goal** – Produce a clean GDSII with no human intervention.
+
+"Clean" means: No LVS, DRC, or timing violations.
+
+<img width="863" height="492" alt="image" src="https://github.com/user-attachments/assets/39a4f205-ad67-4232-876c-f051a584edf3" />
+
+**Synthesis Exploration**
+
+**Design Exploration Utilities** – Generates reports on violations (helps find the best design configurations) and is also used for regression testing.
+
+**Testing After Fabrication (DFT)** – Includes Scan Insertion, Automatic Test Pattern Generation (ATPG), Test Pattern Compaction, Fault Coverage, and Fault Simulation.
+
+**Physical Implementation** – The OpenROAD app performs automated place and route. It covers:
+
+-Floorplanning/Power Planning
+-End Decoupling Capacitors and Tap Cell Insertion
+-Placement: Global and Detailed
+-Post-Placement Optimization
+-Clock Tree Synthesis (CTS)
+-Routing: Global and Detailed
+
+Dealing with Antenna rule violations – 
+
+<img width="811" height="495" alt="image" src="https://github.com/user-attachments/assets/98b3ea33-f822-4ceb-9ea2-2ed03e40eff1" />
+
+**2 solution :**
+
+1-	Bridging – attaches higher layer intermediary (Reuires Router Awareness)
+2-	Add antenna diode cell 
