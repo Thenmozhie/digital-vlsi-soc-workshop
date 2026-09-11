@@ -902,4 +902,25 @@ Hydrogen peroxide 1 part
 
   <img width="727" height="584" alt="image" src="https://github.com/user-attachments/assets/552c1799-b30d-4ff3-8e12-b859e0503736" />
 
+**Lab – Magic Tool: Layout of CMOS Inverter**
 
+**Layers:**
+
+Local Interconnect Layer – Local, shown in blue.
+
+Metal 1 – Purple.
+
+Metal 2 – Pink.
+
+N-well – Shown with solid lines.
+
+**Navigation tips:**
+
+Move the mouse anywhere and press S to select, then click on the Tkcon window and type what to know about the highlighted portion.
+Place the cursor at the needed location, then press S twice to know about the connection.
+
+LEF File – Library Exchange Format. Contains all metal layers but no logic; it defines where the pins and boundaries are for placing the cell. Commercially, LEF is referred to as the frame view.
+
+Reference: https://github.com/nickson-jose/vsdstdcelldesign
+
+This GitHub link includes step-by-step instructions for creating a CMOS layout.
