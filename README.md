@@ -154,4 +154,36 @@ Dealing with Antenna rule violations –
 **2 solution :**
 
 1-	Bridging – attaches higher layer intermediary (Reuires Router Awareness)
-2-	Add antenna diode cell 
+
+2-	Add antenna diode cell
+
+<img width="858" height="563" alt="image" src="https://github.com/user-attachments/assets/be08b154-29ae-4be0-84bb-751fd8fe26a3" />
+
+**Open Source Tools**
+
+**Antenna Check** – Fake antenna diodes are used; the antenna checker (Magic) is run on the routed layout.
+
+**STA** – OpenSTA (part of OpenROAD).
+
+**Physical Verification** – Magic performs Design Rule Checking (DRC) and SPICE extraction from the layout. Magic and Netgen are used for LVS.
+
+**OpenLANE Directory Structure (in detail)**
+
+The Skywater 130nm PDK is used in this workshop.
+
+**Open PDK** – Timing, tech files, etc. — scripts that convert foundry-level IP PDK files to be compatible with open-source EDA tools like Magic and Netgen. Magic is used for layout.
+
+**Skywater PDK** – One of the variants.
+
+libs.ref
+
+libs.tech
+
+<img width="975" height="602" alt="image" src="https://github.com/user-attachments/assets/cc9c4b4e-1e95-4b55-b3fd-1ee98b62b803" />
+
+```tcl
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+```
