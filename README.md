@@ -514,6 +514,75 @@ The output from GUNA brings the classification of characterization types:
 2. Power characterization
 3. Noise characterization
 
+**Timing Characterization** – To familiarize ourselves with the tool GUNA, we need to understand some variables that we feed into the software.
+
+<img width="975" height="493" alt="image" src="https://github.com/user-attachments/assets/ea1745e6-c093-494d-86b5-23d292133981" />
+
+<img width="973" height="301" alt="image" src="https://github.com/user-attachments/assets/9b8e20e9-4aa2-41e6-930e-36b1f383837c" />
+
+**Propagation Delay**
+
+Delay = (Time at output threshold) − (Time at input threshold)
+
+<img width="544" height="289" alt="image" src="https://github.com/user-attachments/assets/c13cd967-ec0c-4db2-b273-d0fe6208b5de" />
+
+If the output comes before the input, it gives a negative wire delay, which represents a poor choice of threshold points.
+
+<img width="674" height="438" alt="image" src="https://github.com/user-attachments/assets/02a3923e-de25-4783-91dd-3049ac9cb5bb" />
+
+When two inverters are placed very far apart, we may see negative wire delays even if the output threshold points are correct.
+
+Note: Negative delay indicates greater slew.
+
+<img width="975" height="483" alt="image" src="https://github.com/user-attachments/assets/3ea001a8-e841-4d8e-a816-ec4e3a6eaab4" />
+
+
+**Timing characterization for Transition Time:**
+
+Note: 20% of Vdd
+
+<img width="974" height="247" alt="image" src="https://github.com/user-attachments/assets/ed8b0536-370b-4932-bc62-43943299e2d4" />
+
+<img width="975" height="335" alt="image" src="https://github.com/user-attachments/assets/3ad2bb66-72c4-40c7-a5d2-4ee457cc9e0b" />
+
+
+<img width="975" height="440" alt="image" src="https://github.com/user-attachments/assets/612b4720-a0e2-4ff3-8a7a-d58956bf4958" />
+
+## Day 3  Design library cell using Magic Layout and ngspice characterization
+
+**Lab:** IO Placer Revision (IO Placer Tool)
+
+How to make changes to the file: The setting for input/output pins is available in the floorplan.tcl file.
+
+Copy/paste: Select the variable, go to the place where you want to paste it, and press the mouse middle button.
+
+Setting the variable env(FP_IO_MODE) to 2:
+
+set ::env(FP_IO_MODE) 2
+run_floorplan
+
+
+**Voltage Transfer Characteristics (VTC) – SPICE Simulation**
+
+**Step 1:** How to create a SPICE deck for the complete netlist?
+
+**Component Connectivity** – Provide connectivity for the substrate as well, since it is a potential pin on the NMOS/PMOS transistor (it tunes the threshold voltage of the transistor).
+
+<img width="309" height="361" alt="image" src="https://github.com/user-attachments/assets/8199ffdc-05bc-4299-87f1-93cc5fec48b3" />
+
+**Component Values** – Values for PMOS/NMOS. Ideally, PMOS should be twice or thrice the size of NMOS; here, for simplicity, we consider the same values for both PMOS and NMOS.
+Voltage Values.
+
+<img width="454" height="389" alt="image" src="https://github.com/user-attachments/assets/3b73145d-fb1f-4523-994f-df155077781c" />
+
+<img width="392" height="309" alt="image" src="https://github.com/user-attachments/assets/39dda5de-df5e-4ea0-a2d1-c1e890d68a9f" />
+
+**Identify Nodes** – One component lies between 2 points. For example, M1 lies between 3 nodes, while a capacitor lies between 2 nodes.
+
+**Name the Nodes** – For example, the load capacitor lies between "out" and "0."
+
+<img width="385" height="339" alt="image" src="https://github.com/user-attachments/assets/57ad5a1c-ac6a-4024-9eb2-36e3f71be246" />
+
 
 
 
