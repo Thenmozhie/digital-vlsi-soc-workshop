@@ -469,4 +469,36 @@ Supply voltage (considering noise margin).
 
 Circuit Design – Determines the switching threshold voltage, deriving (Wp/Lp)/(Wn/Ln). The output from circuit design is called the Circuit Description Language (CDL) file.
 
+<img width="727" height="792" alt="image" src="https://github.com/user-attachments/assets/8e7c7997-b163-400d-84d0-658df137e7e5" />
+
+**Layout Design** – Using the (Wp/Lp)/(Wn/Ln) values obtained from the previous step, we implement them into the layout.
+
+**Step 1** – Implement the function through MOS transistors.
+**Step 2** – Derive the PMOS and NMOS graphs from the design (Euler's path and stick diagram).
+Use the results from the input stage — DRC rules, etc. — to create the layout (Tool: Magic).
+
+**Output from Layout Design:**
+
+GDSII
+LEF (width and height of the cell)
+Extracted SPICE netlist (.cir) — resistance and capacitance of every element.
+
+<img width="829" height="489" alt="image" src="https://github.com/user-attachments/assets/3408de83-3fc1-4467-b4e2-65d394db454f" />
+
+**Characterization**
+
+**Output:** Timing, noise, power (.libs), and functionality of the circuit.
+
+**Steps:**
+
+1. Read the model file.
+2. Extract the netlist file.
+3. Recognize the behavior of the buffer.
+4. Read the sub-circuit of the inverter.
+5. Attach the necessary power source.
+6. Apply the stimulus.
+7. Provide the necessary output capacitance.
+8. Provide the necessary simulation command (transient simulation – .tran, DC simulation – .dc).
+
+These inputs (steps 1–8) are fed in the form of configuration files to the characterization software called GUNA.
 
