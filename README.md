@@ -18,4 +18,29 @@ Inside the Chip
 
 -Die – The physical size of the chip.
 
+<img width="953" height="592" alt="image" src="https://github.com/user-attachments/assets/34f8f25b-d03b-4d78-a2d8-aa26459ef4e3" />
+
+EXAMPLE- RISC V CHIP
+
+<img width="747" height="586" alt="image" src="https://github.com/user-attachments/assets/f808e1e3-0eab-445f-b894-9715f3344c8b" />
+
+Foundry IPs
+
+A typical core/chip consists of components such as SoC, PLL, SPI, SRAM, ADC, and DAC — these are called Foundry IPs. Most chips depend on this foundry.
+
+Foundry – The place where chips are manufactured. We communicate with the foundry through an interface file that is given to us or passed through us.
+
+Macros – Digital blocks.
+
+Difference:
+
+IP – Some intelligence/technique used to build certain logic.
+Macros – Pure digital logic.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/6645c685-9b8f-4697-9fa0-0bcc6020a15b" />
+
+
+
+
+
 
