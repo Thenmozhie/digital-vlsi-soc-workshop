@@ -2,7 +2,7 @@
 
 Table of Contents
 
- [DAY 1](#DAY 1 Inception of open-source EDA, OpenLANE and Sky130 PDK)
+ [DAY 1](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
  
 ## DAY 1 Inception of open-source EDA, OpenLANE and Sky130 PDK
 As an example, an Arduino board has a processor chip on it.
