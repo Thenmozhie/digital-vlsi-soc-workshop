@@ -804,5 +804,47 @@ Plasma anisotropic etching.
 <img width="868" height="246" alt="image" src="https://github.com/user-attachments/assets/b32f67fc-a2a6-4ad7-8873-d23291072e9d" />
 
 - Again photoresist then mask10 one of the area, then UV rays exposure, then ionization
-- 
+  
+- boron
+  
+  <img width="902" height="253" alt="image" src="https://github.com/user-attachments/assets/cc9d303f-9be6-4386-b954-75248135f83f" />
+
+- put then into High temperature furnace – 1000 degree C
+n-type will penetrate more into the p-well and p-type will penetrate more into the n-well. This process is called high temp annealing
+
+<img width="810" height="411" alt="image" src="https://github.com/user-attachments/assets/edc20d11-ab38-4fd1-8480-f1ebb2b85b25" />
+
+**7.	Steps to form contacts and interconnects**
+
+- etch/remove the thin oxide in HF solution – open up the contacts
+  
+  <img width="717" height="270" alt="image" src="https://github.com/user-attachments/assets/c09d6051-47d1-4777-b932-e8dd612b448e" />
+
+- deposit Titanium – Ti has low resistivity. Using sputtering
+  
+Sputtering – when Ti is exposed to Argon gas, Ti on the surface will get extracted and deposited on the substrate.
+
+<img width="889" height="205" alt="image" src="https://github.com/user-attachments/assets/c57aa51a-af3d-4234-84cf-02dd2d000349" />
+
+- heated at about 650 – 700 degree C in N2  ambient for 60 sec
+  
+<img width="665" height="295" alt="image" src="https://github.com/user-attachments/assets/3c6b38d8-456e-4fbc-9e3f-b99237d4a81f" />
+
+- Again photoresist then mask11 one of the area, then UV rays exposure
+  
+- etching TiN using RCA cleaning
+  
+RCA is a solution – 
+
+de-ionized water 5part,
+
+ammonium hydroxide 1part, 
+
+Hydrogen peroxide 1 part
+
+<img width="1089" height="228" alt="image" src="https://github.com/user-attachments/assets/1d3f116d-5ee7-4c29-be32-d49e8bf714a2" />
+
+
+
+
 
